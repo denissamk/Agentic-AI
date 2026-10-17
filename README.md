@@ -1,1 +1,1 @@
-# Agentic AI Learning Repository
+# Agentic AI Repository
