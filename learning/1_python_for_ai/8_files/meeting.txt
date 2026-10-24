@@ -1,0 +1,8 @@
+
+Production Meeting - May 29
+
+Ramesh (Production): Last week we made 4,200 units, but our target was 5,000. Machine 3 was down for two days, so we fell behind.
+Anjali (Maintenance): Machine 3 is working again now. I will check all the machines this week so we do not get sudden breakdowns.
+Vikram (Quality): We found 80 units with paint problems. The paint is not drying properly. We must fix the painting step.
+Suresh (Store): The steel supply is late again. The new stock will arrive on Thursday.
+Meena (Manager): Okay. Ramesh, please plan some extra shifts to cover the gap. Anjali, finish the machine check by Friday. Vikram, send me a short report on the paint problem by tomorrow.
