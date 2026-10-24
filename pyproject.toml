@@ -17,6 +17,8 @@ dependencies = [
     "python-dotenv>=1.2.2",
     "ipykernel>=7.4.0",
     "streamlit>=1.66.1",
+    "notebook>=7.6.3",
+    "jupyterthemes>=0.20.0",
 ]
 
 [project.scripts]
