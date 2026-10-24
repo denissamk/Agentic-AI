@@ -20,6 +20,7 @@ dependencies = [
     "notebook>=7.6.3",
     "jupyterthemes>=0.20.0",
     "google-genai>=2.31.0",
+    "dotenv>=0.9.9",
 ]
 
 [project.scripts]
