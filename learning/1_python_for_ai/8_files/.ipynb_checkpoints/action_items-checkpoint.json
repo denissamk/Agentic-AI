@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "task": "Plan extra shifts to cover the gap",
+      "owner": "Ramesh"
+    },
+    {
+      "task": "Finish machine check by Friday",
+      "owner": "Anjali"
+    },
+    {
+      "task": "Send a short report on the paint problem by tomorrow",
+      "owner": "Vikram"
+    }
+  ]
+}
