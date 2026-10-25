@@ -20,9 +20,9 @@ def generate_recipe(ingredients, cuisine, diet):
     return response.text
 
 
-st.title("Recipe Generator")
+st.title("Recipes Generator")
 
-ingredients = st.text_area("Ingredients", placeholder="e.g. tomatoes, lentils, onion, cumin, salt")
+ingredients = st.text_area("Fill Ingredients", placeholder="e.g. tomatoes, lentils, onion, cumin, salt")
 
 diet = st.selectbox("Diet", ["Any", "Vegan", "Jain", "Vegetarian"])
 
