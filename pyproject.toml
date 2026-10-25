@@ -21,6 +21,7 @@ dependencies = [
     "jupyterthemes>=0.20.0",
     "google-genai>=2.31.0",
     "dotenv>=0.9.9",
+    "cerebras-cloud-sdk>=1.91.0",
 ]
 
 [project.scripts]
