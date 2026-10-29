@@ -1,11 +1,11 @@
 {
   "items": [
     {
-      "task": "Plan some extra shifts to cover the production gap",
+      "task": "Plan extra shifts to cover the production gap",
       "owner": "Ramesh"
     },
     {
-      "task": "Finish the machine check by Friday",
+      "task": "Finish machine check by Friday",
       "owner": "Anjali"
     },
     {

@@ -23,6 +23,8 @@ dependencies = [
     "dotenv>=0.9.9",
     "cerebras-cloud-sdk>=1.91.0",
     "groq>=0.37.1",
+    "fastapi[standard]>=0.162.0",
+    "requests>=2.34.2",
 ]
 
 [project.scripts]
