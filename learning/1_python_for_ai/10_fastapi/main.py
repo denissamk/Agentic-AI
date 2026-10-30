@@ -1,12 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from dotenv import load_dotenv
-from google import genai
-from google.genai import types
+from groq import Groq
 
 # Load the GOOGLE_API_KEY from the .env file so we can call Gemini.
 load_dotenv()
-client = genai.Client()
+client = Groq()
 
 # This one line creates our web app. We will hang all our endpoints on it.
 app = FastAPI()
@@ -53,18 +52,24 @@ class Sentiment(BaseModel):
 
 @app.post("/sentiment")
 def analyze_sentiment(review: Review):
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=(
-            "Find the sentiment of this customer review. "
-            "label must be 'positive', 'negative', or 'neutral'. "
-            "score must be a number from 1 (very bad) to 5 (very good). "
-            f"Review: {review.text}"
-        ),
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=Sentiment,
-        ),
+    response = client.chat.completions.create(
+        model="openai/gpt-oss-20b",
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You analyze customer review sentiment. Reply only with JSON: "
+                    '{"label": "positive" | "negative" | "neutral", "score": 1-5}. '
+                    "score is 1 (very bad) to 5 (very good)."
+                ),
+            },
+            {"role": "user", "content": f"Review: {review.text}"},
+        ],
+        response_format={
+            "type": "json_schema",
+            "json_schema": {"name": "sentiment", "schema": Sentiment.model_json_schema()},
+        },
+        temperature=0,
     )
-    # response.parsed is already a Sentiment object, ready to return.
-    return response.parsed
+    # Groq returns a JSON string, so validate it into your Sentiment model.
+    return Sentiment.model_validate_json(response.choices[0].message.content)
